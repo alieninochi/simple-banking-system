@@ -6,6 +6,10 @@ def create_account():
     card_number = '400000' + '0' * (10 - int(len(account_id))) + account_id
     card_pin = str(random.randint(0, 9999))
     card_pin = '0' * (4 - int(len(card_pin))) + card_pin
+    bank_db[card_number] = {
+        "pin": card_pin,
+        "balance": 0.0
+    }
 
     print("Your card has been created")
     print("Your card number:")
@@ -14,7 +18,7 @@ def create_account():
     print(card_pin)
 
 
-def print_menu():
+def print_main_menu():
     while True:
         print("1. Create an account")
         print("2. Log in into account")
@@ -28,3 +32,7 @@ def print_menu():
         if choice == 0:
             print("Bye!")
             exit(0)
+
+
+bank_db = {}
+print_main_menu()
