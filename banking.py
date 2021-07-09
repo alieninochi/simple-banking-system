@@ -12,3 +12,19 @@ def create_account():
     print(card_number)
     print("Your pin:")
     print(card_pin)
+
+
+def print_menu():
+    while True:
+        print("1. Create an account")
+        print("2. Log in into account")
+        print("0. Exit")
+
+        choice = int(input())
+        if choice == 1:
+            create_account()
+        if choice == 2:
+            pass
+        if choice == 0:
+            print("Bye!")
+            exit(0)
